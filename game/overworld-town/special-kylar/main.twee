@@ -30,11 +30,11 @@
 
 <<widget "kylarangry">>
 	<<if $submissive gte 1150>>
-		"너는 소름 끼쳐," 당신은 말한다. "여기서 보내줘."
+		"소름 끼쳐.." 당신은 말한다. "여기서 보내줘."
 	<<elseif $submissive lte 850>>
-		"변태," 당신은 말한다. "지금 당장 날 보내줘."
+		"변태.." 당신은 말한다. "지금 당장 날 보내줘."
 	<<else>>
-		"너는 끔찍해," 당신은 말한다. "날 여기서 보내줘."
+		"끔찍해.." 당신은 말한다. "날 여기서 보내줘."
 	<</if>>
 	<br><br>
 <</widget>>
@@ -58,6 +58,7 @@
 	<<elseif ($bus is "starfish" or $bus is "park") and $daystate isnot "day">>
 		<<if $syndromekylar is 1>>
 			<<He>> looks at <<his>> watch. "I need to go," <<he>> says. "They're waiting for me." <<He>> looks at you.
+			<<he_ nun>> <<his_ yi>> 시계를 본다. "이만 가볼게. 기다리는 사람들이 있어서."  <<he_ nun>> 너를 쳐다본다.
 		<<elseif _kylarStatus.includes("Love")>>
 			<<he_ nun>> <<his_ yi>> 시계를 보더니, 이제 가야한다고 말한다. "기다리는 사람들이 있어서." <<he_ nun>> 가는 길에도 당신을 어깨너머로 계속 쳐다본다.
 		<<else>>
@@ -69,14 +70,18 @@
 	<<elseif $bus is "kylarmanor" and $hour lt 18>>
 		<<unset $kylar_action>>
 		Kylar looks at a monitor. "I should sleep," <<he>> says. <<He>> walks over to <<his>> bed and collapses atop it, fully dressed. <<He>> watches you, longing on <<his>> face, but <<he>> doesn't say anything.
+		카일라는 모니터를 바라본다. "자야겠다." <<he_ ga>> 말한다. 옷을 입은채 그대로 침대로 걸어가 풀썩 쓰러진다. <<he_ nun>> 조용히 갈망하는 표정으로 당신을 바라본다.
 		<br><br>
 
 		<<link [[Say goodnight|Manor Kylar Goodnight]]>><</link>>
+		<<link [[잘 자라고 말한다|Manor Kylar Goodnight]]>><</link>>
 		<br>
 		<<link [[Pounce|Manor Kylar Pounce]]>><<npcincr Kylar love 1>><</link>><<promiscuous1>><<glove>>
+		<<link [[덮친다|Manor Kylar Pounce]]>><<npcincr Kylar love 1>><</link>><<promiscuous1>><<glove>>
 		<br>
 	<<elseif _kylarStatus.includes("Love") and $NPCName[$NPCNameList.indexOf("Kylar")].love gte 90 and $kylar_camera is undefined>>
 		Kylar looks even more anxious than usual. <<He>> stares at <<his>> feet, and shifts <<his>> weight between them. "I-I," <<he>> gulps. "I got you something." <<He>> crouches, and reaches behind a bench, pulling out a bow-tied box. <<He>> holds it out to you.
+		카일라는 평소보다 훨씬 더 불안해 보인다. 자신의 발만 빤히 내려보다, 천천히 자세를 바꾼다. "나-나" <<he_ nun>> 침을 꿀꺽 삼킨다. "너한테 줄게 있어." 그는 몸을 웅크리고 벤치 뒤로 손을 뻗어 끈으로 묶인 상자를 꺼내 당신에게 내민다.
 		<br><br>
 
 		<<link [[열어본다|Kylar Gift Box Open]]>><<npcincr Kylar rage -5>><<npcincr Kylar love 1>><</link>><<glove>><<llksuspicion>>
@@ -87,10 +92,13 @@
 		<<if _lewdIdea>>
 			<<if $kylarSeen.includes("home")>>
 				You remember seeing Kylar snooping around your room, as well as noticing a pair of underwear missing before that, and
+				카일라가 네 방을 기웃거리는 걸 본 것도 기억하고, 그 전에 속옷 한 벌이 없어진 것도 기억한다. 그리고...
 			<<elseif $whitneypantiescheck is 1>>
 				You remember the deal Whitney made with you, about coming to school with no underwear, and
+				
 			<<else>>
 				You think of your own experiences with being exposed in public, and
+				
 			<</if>>
 			<span class="lewd">a lewd idea strikes you.</span>
 			<br><br>
